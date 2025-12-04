@@ -106,6 +106,29 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link:hover {
+  color: #364147;
+  transform: translateY(-3px);
+}
+
+.nav-link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #364147;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover:before {
+  width: 100%;
 }
 .profile {
   margin-left: auto;

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Carved Rock Fitness</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
@@ -25,11 +26,11 @@
             <button class="search-button" type="submit">SEARCH</button>
           </form>
           <ul class="flex space-between nav-list">
-            <li><a href="#">Clothing</a></li>
-            <li><a href="#">Footwear</a></li>
-            <li><a href="#">Equipment</a></li>
-            <li><a href="#">Bags &amp; Travel</a></li>
-            <li><a href="#">Trail Reviews</a></li>
+            <li><a href="#" class="nav-link">Clothing</a></li>
+            <li><a href="#" class="nav-link">Footwear</a></li>
+            <li><a href="#" class="nav-link">Equipment</a></li>
+            <li><a href="#" class="nav-link">Bags &amp; Travel</a></li>
+            <li><a href="#" class="nav-link">Trail Reviews</a></li>
           </ul>
         </div>
         <!-- PROFILE -->
@@ -45,7 +46,7 @@
 
     <!-- HERO -->
   <section class="hero""">
-    <div class="container flex flex-column align-center center">
+    <div class="container flex flex-column align-center center" data-aos="fade-down" data-aos-duration="1000">
       <h1>Get A Grip</h1>
       <h2>20% Off</h2>
       <p>Throughout The Season</p>
@@ -57,7 +58,7 @@
 
     <!-- SALE BANNER -->
     <section>
-      <div class="flex align-center center banner">
+      <div class="flex align-center center banner" data-aos="fade-up" data-aos-duration="1000">
         <img alt="Brown Boots" src="img/brown-boots.jpg">
         <div class="banner-text">
           <div class="text-light">Couples retreat weekend</div>
@@ -70,7 +71,7 @@
 
     <!-- CATEGORIES -->
     <section>
-      <div class="category">
+      <div class="category" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
         <a href="#">
           <img alt="Splash Chic" src="img/category-1.jpg" />
           <div class="category-text">
@@ -79,7 +80,7 @@
           </div>
         </a>
       </div>
-      <div class="category">
+      <div class="category" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
         <a href="#">
           <img alt="Kid Klimbers" src="img/category-2.jpg" />
           <div class="category-text">
@@ -88,7 +89,7 @@
           </div>
         </a>
       </div>
-      <div class="category">
+      <div class="category" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
         <a href="#">
           <img alt="Pack It In" src="img/category-3.jpg" />
           <div class="category-text">
@@ -97,7 +98,7 @@
           </div>
         </a>
       </div>
-      <div class="category">
+      <div class="category" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
         <a href="#">
           <img alt="Nature's AC" src="img/category-4.jpg" />
           <div class="category-text">
@@ -110,8 +111,8 @@
 
     <!-- FULL BANNER -->
     <section class="full-banner">
-      <div class="full-banner-image"></div>
-      <div class="flex flex-column align-center center full-banner-sidebar">
+      <div class="full-banner-image" data-aos="zoom-in" data-aos-duration="1000"></div>
+      <div class="flex flex-column align-center center full-banner-sidebar" data-aos="fade-left" data-aos-duration="1000">
         <h4>Trail Review</h4>
         <div>Asphalt</div>
         <div>National Park</div>
@@ -183,5 +184,32 @@
 
     <div class="text-primary copyright">&copy;Pluralsight 2018</div>
   </footer>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true
+    });
+
+    // Smooth scroll with jQuery
+    $(document).ready(function() {
+      // Smooth scroll for all anchor links
+      $('a[href^="#"]').on('click', function(e) {
+        var target = $(this).attr('href');
+        if (target !== '#' && $(target).length) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: $(target).offset().top - 100
+          }, 800);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
